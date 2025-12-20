@@ -1,0 +1,98 @@
+[
+    {
+        "merged": "aman.loghub.app-debug-42:/layout_activity_main.xml.flat",
+        "source": "aman.loghub.app-main-44:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/layout_item_log.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/layout/item_log.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/drawable_ic_view_agenda.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/drawable/ic_view_agenda.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/menu_menu_main.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/menu/menu_main.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/drawable_delete.png.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/drawable/delete.png"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/drawable_ic_launcher_background.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/xml_backup_rules.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/xml_data_extraction_rules.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-pngs-38:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/drawable_ic_subject.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/drawable/ic_subject.xml"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/drawable_ic_launcher.png.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/drawable/ic_launcher.png"
+    },
+    {
+        "merged": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-debug-42:/layout_activity_main.xml.flat",
+        "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/daemon/9.0.0/aman.loghub.app-main-44:/layout/activity_main.xml"
+    }
+]
