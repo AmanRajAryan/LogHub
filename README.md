@@ -8,6 +8,19 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.net.Uri;
 
+
+/**
+>>>ADD THIS IN MANIFEST
+
+<application
+        android:name=".Log" <- your.package.name.Log
+        
+        
+**/
+
+
+
+
 /**
 >>>ADD THIS IN MANIFEST
 
