@@ -37,7 +37,7 @@ public class LogHubProvider extends ContentProvider {
             LogEntry entry = new LogEntry(appName, tag, message, level, timestamp);
             
             new Thread(() -> {
-                LogDatabase.getInstance(getContext()).logDao().insert(entry);
+                LogDatabase.getInstance(getContext()).insert(entry);
                 
                 Intent intent = new Intent(ACTION_NEW_LOG);
                 intent.putExtra("log_entry", entry);

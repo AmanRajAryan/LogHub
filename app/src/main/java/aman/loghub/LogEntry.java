@@ -1,14 +1,10 @@
 package aman.loghub;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
-@Entity(tableName = "logs")
 public class LogEntry implements Serializable {
     
-    @PrimaryKey(autoGenerate = true)
-    public int id;
+    public int id; // Managed manually by SQLite
     
     public String appName;
     public String tag;
@@ -23,4 +19,7 @@ public class LogEntry implements Serializable {
         this.level = level;
         this.timestamp = timestamp;
     }
+    
+    // Empty constructor for flexibility
+    public LogEntry() {}
 }

@@ -1,0 +1,129 @@
+Run tasks : [:app:assembleRelease]
+
+> Configure project :app
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :app:mergeReleaseNativeLibs NO-SOURCE
+> Task :app:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsRelease UP-TO-DATE
+> Task :app:generateReleaseResValues UP-TO-DATE
+> Task :app:generateReleaseResources UP-TO-DATE
+> Task :app:mergeReleaseResources UP-TO-DATE
+> Task :app:packageReleaseResources UP-TO-DATE
+> Task :app:processReleaseNavigationResources UP-TO-DATE
+> Task :app:parseReleaseLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesRelease UP-TO-DATE
+> Task :app:javaPreCompileRelease UP-TO-DATE
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+> Task :app:compileReleaseNavigationResources UP-TO-DATE
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksRelease UP-TO-DATE
+> Task :app:processReleaseMainManifest UP-TO-DATE
+> Task :app:processReleaseManifest UP-TO-DATE
+> Task :app:processReleaseManifestForPackage UP-TO-DATE
+> Task :app:processReleaseResources UP-TO-DATE
+Failed to load native library:sqlite-3.41.2.2-1d8c7166-960c-4cfb-a7e5-e13f50d78e95-libsqlitejdbc.so. osinfo: Linux-Android/aarch64
+java.lang.UnsatisfiedLinkError: /data/data/com.tom.rv2ide/files/usr/tmp/sqlite-3.41.2.2-1d8c7166-960c-4cfb-a7e5-e13f50d78e95-libsqlitejdbc.so: dlopen failed: cannot locate symbol "Xzs_Construct" referenced by "/system/lib64/libunwindstack.so"...
+	at java.base/jdk.internal.loader.NativeLibraries.load(Native Method)
+
+> Task :app:compileReleaseJavaWithJavac FAILED
+	at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:388)
+	at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:232)
+	at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:174)
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2394)
+	at java.base/java.lang.Runtime.load0(Runtime.java:755)
+	at java.base/java.lang.System.load(System.java:1970)
+	at org.sqlite.SQLiteJDBCLoader.loadNativeLibrary(SQLiteJDBCLoader.java:284)
+	at org.sqlite.SQLiteJDBCLoader.extractAndLoadLibraryFile(SQLiteJDBCLoader.java:241)
+	at org.sqlite.SQLiteJDBCLoader.loadSQLiteNativeLibrary(SQLiteJDBCLoader.java:338)
+	at org.sqlite.SQLiteJDBCLoader.initialize(SQLiteJDBCLoader.java:72)
+	at androidx.room.verifier.DatabaseVerifier.<clinit>(DatabaseVerifier.kt:79)
+	at androidx.room.processor.DatabaseProcessor.doProcess(DatabaseProcessor.kt:81)
+	at androidx.room.processor.DatabaseProcessor.process(DatabaseProcessor.kt:60)
+	at androidx.room.DatabaseProcessingStep$process$databases$1$1.invoke(DatabaseProcessingStep.kt:68)
+	at androidx.room.DatabaseProcessingStep$process$databases$1$1.invoke(DatabaseProcessingStep.kt:64)
+	at androidx.room.processor.Context.collectLogs(Context.kt:192)
+	at androidx.room.DatabaseProcessingStep.process(DatabaseProcessingStep.kt:64)
+	at androidx.room.compiler.processing.CommonProcessorDelegate.processRound(XBasicAnnotationProcessor.kt:130)
+	at androidx.room.compiler.processing.javac.JavacBasicAnnotationProcessor.process(JavacBasicAnnotationProcessor.kt:73)
+	at org.gradle.api.internal.tasks.compile.processing.DelegatingProcessor.process(DelegatingProcessor.java:62)
+	at org.gradle.api.internal.tasks.compile.processing.DynamicProcessor.process(DynamicProcessor.java:52)
+	at org.gradle.api.internal.tasks.compile.processing.DelegatingProcessor.process(DelegatingProcessor.java:62)
+	at org.gradle.api.internal.tasks.compile.processing.TimeTrackingProcessor.access$401(TimeTrackingProcessor.java:37)
+	at org.gradle.api.internal.tasks.compile.processing.TimeTrackingProcessor$5.create(TimeTrackingProcessor.java:99)
+	at org.gradle.api.internal.tasks.compile.processing.TimeTrackingProcessor$5.create(TimeTrackingProcessor.java:96)
+	at org.gradle.api.internal.tasks.compile.processing.TimeTrackingProcessor.track(TimeTrackingProcessor.java:117)
+	at org.gradle.api.internal.tasks.compile.processing.TimeTrackingProcessor.process(TimeTrackingProcessor.java:96)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.callProcessor(JavacProcessingEnvironment.java:1023)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.discoverAndRunProcs(JavacProcessingEnvironment.java:939)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment$Round.run(JavacProcessingEnvironment.java:1267)
+	at jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment.doProcessing(JavacProcessingEnvironment.java:1382)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.processAnnotations(JavaCompiler.java:1234)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:916)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.lambda$doCall$0(JavacTaskImpl.java:104)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.doCall(JavacTaskImpl.java:100)
+	at jdk.compiler/com.sun.tools.javac.api.JavacTaskImpl.call(JavacTaskImpl.java:94)
+	at org.gradle.internal.compiler.java.IncrementalCompileTask.call(IncrementalCompileTask.java:92)
+	at org.gradle.api.internal.tasks.compile.AnnotationProcessingCompileTask.call(AnnotationProcessingCompileTask.java:94)
+	at org.gradle.api.internal.tasks.compile.ResourceCleaningCompilationTask.call(ResourceCleaningCompilationTask.java:57)
+	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:83)
+	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:50)
+	at org.gradle.api.internal.tasks.compile.daemon.AbstractIsolatedCompilerWorkerExecutor$CompilerWorkAction.execute(AbstractIsolatedCompilerWorkerExecutor.java:79)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:68)
+	at org.gradle.workers.internal.AbstractClassLoaderWorker$1.create(AbstractClassLoaderWorker.java:54)
+	at org.gradle.workers.internal.AbstractClassLoaderWorker$1.create(AbstractClassLoaderWorker.java:48)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.AbstractClassLoaderWorker.executeInClassLoader(AbstractClassLoaderWorker.java:48)
+	at org.gradle.workers.internal.FlatClassLoaderWorker.run(FlatClassLoaderWorker.java:32)
+	at org.gradle.workers.internal.FlatClassLoaderWorker.run(FlatClassLoaderWorker.java:22)
+	at org.gradle.workers.internal.WorkerDaemonServer.run(WorkerDaemonServer.java:108)
+	at org.gradle.workers.internal.WorkerDaemonServer.run(WorkerDaemonServer.java:77)
+	at org.gradle.process.internal.worker.request.WorkerAction.lambda$run$1(WorkerAction.java:150)
+	at org.gradle.process.internal.worker.child.WorkerLogEventListener.withWorkerLoggingProtocol(WorkerLogEventListener.java:41)
+	at org.gradle.process.internal.worker.request.WorkerAction.lambda$run$2(WorkerAction.java:150)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:84)
+	at org.gradle.process.internal.worker.request.WorkerAction.run(WorkerAction.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+[Incubating] Problems report is available at: file:///storage/emulated/0/AndroidIDEProjects/LogHub/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileReleaseJavaWithJavac'.
+> java.lang.ExceptionInInitializerError
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to generate a Build Scan (Powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.0.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 7s
+21 actionable tasks: 1 executed, 20 up-to-date

@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
     private void loadLogs() {
         new Thread(
                         () -> {
-                            allLogs = LogDatabase.getInstance(this).logDao().getAllLogs();
+                            allLogs = LogDatabase.getInstance(this).getAllLogs();
                             runOnUiThread(
                                     () -> {
                                         adapter.setLogs(allLogs);
@@ -306,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(
                         () -> {
                             List<LogEntry> logs =
-                                    LogDatabase.getInstance(this).logDao().getAllLogs();
+                                    LogDatabase.getInstance(this).getAllLogs();
 
                             int total = logs.size();
                             int errors = 0;
@@ -368,7 +368,7 @@ public class MainActivity extends AppCompatActivity {
     private void clearAllLogs() {
         new Thread(
                         () -> {
-                            LogDatabase.getInstance(this).logDao().deleteAll();
+                            LogDatabase.getInstance(this).deleteAll();
                             runOnUiThread(
                                     () -> {
                                         adapter.clear();
@@ -387,7 +387,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(
                         () -> {
                             List<String> appNames =
-                                    LogDatabase.getInstance(this).logDao().getAllAppNames();
+                                    LogDatabase.getInstance(this).getAllAppNames();
 
                             runOnUiThread(
                                     () -> {
@@ -448,7 +448,7 @@ public class MainActivity extends AppCompatActivity {
                             try {
                                 // Fetch logs
                                 List<LogEntry> logs =
-                                        LogDatabase.getInstance(this).logDao().getAllLogs();
+                                        LogDatabase.getInstance(this).getAllLogs();
                                 if (logs.isEmpty()) {
                                     runOnUiThread(
                                             () ->
