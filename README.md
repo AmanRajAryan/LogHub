@@ -1,13 +1,11 @@
 ```java
 
-package your.package.name;
-
+package aman.lhtest; // Change to your package
 
 import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
 import android.net.Uri;
-
 
 /**
 >>>ADD THIS IN MANIFEST
@@ -17,8 +15,6 @@ import android.net.Uri;
         
         
 **/
-
-
 
 
 /**
@@ -542,6 +538,315 @@ public class Log extends Application {
      *       Log.e("PaymentService", "Failed to process payment", e);
      *   }
      */
-    public st
+    public static int e(String tag, String msg, Throwable tr) {
+        int result = android.util.Log.e(tag, msg, tr);
+        sendToLogHub("ERROR", tag, msg + "\n" + android.util.Log.getStackTraceString(tr));
+        return result;
+    }
+    
+    // ========================================================================
+    // PUBLIC API - VERBOSE LEVEL
+    // ========================================================================
+    
+    /**
+     * Send a VERBOSE log message.
+     * 
+     * Verbose logs are for extremely detailed diagnostic information. These
+     * are typically only used during development for tracing specific issues
+     * and are usually filtered out in production builds.
+     * 
+     * @param tag Used to identify the source of a log message.
+     * @param msg The message you would like logged.
+     * @return The number of bytes written (from android.util.Log)
+     * 
+     * Example:
+     *   Log.v("Renderer", "Drawing frame 1234");
+     *   Log.v("Animation", "Interpolated value: 0.456");
+     */
+    public static int v(String tag, String msg) {
+        int result = android.util.Log.v(tag, msg);
+        sendToLogHub("DEBUG", tag, msg);
+        return result;
+    }
+    
+    /**
+     * Send a VERBOSE log message and log the exception.
+     * 
+     * @param tag Used to identify the source of a log message.
+     * @param msg The message you would like logged.
+     * @param tr An exception to log (stack trace will be included)
+     * @return The number of bytes written (from android.util.Log)
+     */
+    public static int v(String tag, String msg, Throwable tr) {
+        int result = android.util.Log.v(tag, msg, tr);
+        sendToLogHub("DEBUG", tag, msg + "\n" + android.util.Log.getStackTraceString(tr));
+        return result;
+    }
+    
+    // ========================================================================
+    // PUBLIC API - WTF LEVEL (What a Terrible Failure)
+    // ========================================================================
+    
+    /**
+     * Send a WTF (What a Terrible Failure) log message.
+     * 
+     * WTF logs are for conditions that should never happen. These represent
+     * critical bugs or impossible states that violate fundamental assumptions
+     * in your code. On debug builds, these can crash your app immediately.
+     * 
+     * Use this sparingly for truly impossible conditions, not just errors.
+     * 
+     * @param tag Used to identify the source of a log message.
+     * @param msg The message you would like logged.
+     * @return The number of bytes written (from android.util.Log)
+     * 
+     * Example:
+     *   if (user == null) {
+     *       Log.wtf("LoginActivity", "User is null after successful login!");
+     *   }
+     *   
+     *   if (databaseConnection == null) {
+     *       Log.wtf("App", "Database connection is null - app cannot function!");
+     *   }
+     */
+    public static int wtf(String tag, String msg) {
+        int result = android.util.Log.wtf(tag, msg);
+        sendToLogHub("ERROR", tag, "WTF: " + msg);
+        return result;
+    }
+    
+    /**
+     * Send a WTF log message and log the exception.
+     * 
+     * @param tag Used to identify the source of a log message.
+     * @param tr An exception to log (stack trace will be included)
+     * @return The number of bytes written (from android.util.Log)
+     */
+    public static int wtf(String tag, Throwable tr) {
+        int result = android.util.Log.wtf(tag, tr);
+        sendToLogHub("ERROR", tag, "WTF: " + android.util.Log.getStackTraceString(tr));
+        return result;
+    }
+    
+    /**
+     * Send a WTF log message and log the exception.
+     * 
+     * @param tag Used to identify the source of a log message.
+     * @param msg The message you would like logged.
+     * @param tr An exception to log (stack trace will be included)
+     * @return The number of bytes written (from android.util.Log)
+     */
+    public static int wtf(String tag, String msg, Throwable tr) {
+        int result = android.util.Log.wtf(tag, msg, tr);
+        sendToLogHub("ERROR", tag, "WTF: " + msg + "\n" + android.util.Log.getStackTraceString(tr));
+        return result;
+    }
+    
+    // ========================================================================
+    // PUBLIC API - HELPER METHODS
+    // ========================================================================
+    
+    /**
+     * Handy function to get a loggable stack trace from a Throwable.
+     * 
+     * This is a passthrough to android.util.Log.getStackTraceString() for
+     * API compatibility.
+     * 
+     * @param tr An exception to log
+     * @return A string representation of the stack trace
+     */
+    public static String getStackTraceString(Throwable tr) {
+        return android.util.Log.getStackTraceString(tr);
+    }
+    
+    /**
+     * Low-level logging call.
+     * 
+     * Allows you to specify the priority/level as an integer constant.
+     * Most code should use the named methods (d, i, w, e) instead.
+     * 
+     * @param priority The priority/type of this log message (Log.VERBOSE, etc.)
+     * @param tag Used to identify the source of a log message.
+     * @param msg The message you would like logged.
+     * @return The number of bytes written (from android.util.Log)
+     */
+    public static int println(int priority, String tag, String msg) {
+        int result = android.util.Log.println(priority, tag, msg);
+        String level = priorityToLevel(priority);
+        sendToLogHub(level, tag, msg);
+        return result;
+    }
+    
+    /**
+     * Checks to see whether or not a log for the specified tag is loggable
+     * at the specified level.
+     * 
+     * This is a passthrough to android.util.Log.isLoggable() for API
+     * compatibility.
+     * 
+     * @param tag The tag to check.
+     * @param level The level to check.
+     * @return Whether or not that this is allowed to be logged.
+     */
+    public static boolean isLoggable(String tag, int level) {
+        return android.util.Log.isLoggable(tag, level);
+    }
+    
+    // ========================================================================
+    // PRIVATE IMPLEMENTATION
+    // ========================================================================
+    
+    /**
+     * Sends a log message to LogHub in the background.
+     * 
+     * This method:
+     * 1. Checks if the system is initialized
+     * 2. Creates a background thread to avoid blocking the caller
+     * 3. Packages the log data into ContentValues
+     * 4. Sends it to LogHub via ContentProvider
+     * 5. Silently fails if LogHub is unavailable (graceful degradation)
+     * 
+     * @param level The log level (DEBUG, INFO, WARN, ERROR)
+     * @param tag The tag identifying the source
+     * @param msg The log message (may include stack traces)
+     */
+    private static void sendToLogHub(String level, String tag, String msg) {
+        // Don't try to log if we're not initialized
+        if (appContext == null) return;
+        
+        // Send to LogHub in background thread to avoid blocking
+        new Thread(() -> {
+            try {
+                ContentValues v = new ContentValues();
+                v.put("app_name", appName != null ? appName : "Unknown");
+                v.put("tag", tag);
+                v.put("message", msg);
+                v.put("level", level);
+                v.put("timestamp", System.currentTimeMillis());
+                appContext.getContentResolver().insert(LOGHUB_URI, v);
+            } catch (Exception e) {
+                // Silently fail - we don't want logging to crash the app
+                // The log still went to logcat, just not to LogHub
+            }
+        }).start();
+    }
+    
+    /**
+     * Converts android.util.Log priority constants to LogHub level strings.
+     * 
+     * @param priority The priority constant from android.util.Log
+     * @return The corresponding level string for LogHub
+     */
+    private static String priorityToLevel(int priority) {
+        switch (priority) {
+            case android.util.Log.VERBOSE:
+            case android.util.Log.DEBUG:
+                return "DEBUG";
+            case android.util.Log.INFO:
+                return "INFO";
+            case android.util.Log.WARN:
+                return "WARN";
+            case android.util.Log.ERROR:
+            case android.util.Log.ASSERT:
+                return "ERROR";
+            default:
+                return "DEBUG";
+        }
+    }
+    
+    // ========================================================================
+    // CRASH HANDLER
+    // ========================================================================
+    
+    /**
+     * Custom uncaught exception handler that logs crashes to LogHub.
+     * 
+     * This handler:
+     * 1. Intercepts uncaught exceptions before the app crashes
+     * 2. Formats crash information (exception type, message, stack trace)
+     * 3. Synchronously writes to LogHub (since app is crashing anyway)
+     * 4. Calls the original handler to let the app crash normally
+     * 
+     * The app still crashes (this doesn't prevent crashes), but now you
+     * have a record of the crash in LogHub for debugging.
+     */
+    private static class CrashHandler implements Thread.UncaughtExceptionHandler {
+        
+        private Context context;
+        private Thread.UncaughtExceptionHandler defaultHandler;
+        private String appName;
+        
+        /**
+         * Creates a new crash handler.
+         * 
+         * @param context Application context for ContentResolver access
+         * @param appName Name of the app (for crash log identification)
+         */
+        public CrashHandler(Context context, String appName) {
+            this.context = context.getApplicationContext();
+            this.appName = appName;
+            // Save the original handler so we can call it after logging
+            this.defaultHandler = Thread.getDefaultUncaughtExceptionHandler();
+        }
+        
+        /**
+         * Called when an uncaught exception occurs.
+         * 
+         * @param thread The thread where the exception occurred
+         * @param throwable The uncaught exception
+         */
+        @Override
+        public void uncaughtException(Thread thread, Throwable throwable) {
+            try {
+                // Format crash information
+                String crashLog = getCrashLog(thread, throwable);
+                
+                // Save crash to LogHub synchronously
+                // We don't use a background thread here because:
+                // 1. The app is crashing anyway, so blocking is acceptable
+                // 2. We need to ensure the log is written before the process dies
+                ContentValues v = new ContentValues();
+                v.put("app_name", appName);
+                v.put("tag", "CRASH");
+                v.put("message", crashLog);
+                v.put("level", "ERROR");
+                v.put("timestamp", System.currentTimeMillis());
+                context.getContentResolver().insert(LOGHUB_URI, v);
+                
+                // Small delay to ensure the write completes
+                // This is a best-effort attempt; the system may kill us anyway
+                Thread.sleep(100);
+                
+            } catch (Exception e) {
+                // If crash logging fails, at least try to log to logcat
+                android.util.Log.e("LogHub", "Failed to log crash", e);
+            } finally {
+                // Always call the default handler to let the app crash normally
+                // This ensures the system handles the crash properly (showing
+                // the crash dialog, etc.)
+                if (defaultHandler != null) {
+                    defaultHandler.uncaughtException(thread, throwable);
+                }
+            }
+        }
+        
+        /**
+         * Formats crash information into a readable string.
+         * 
+         * @param thread The thread where the crash occurred
+         * @param throwable The exception that caused the crash
+         * @return Formatted crash information
+         */
+        private String getCrashLog(Thread thread, Throwable throwable) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("CRASH: ").append(throwable.getClass().getName()).append("\n");
+            sb.append("Message: ").append(throwable.getMessage()).append("\n");
+            sb.append("Thread: ").append(thread.getName()).append("\n\n");
+            sb.append("Stack Trace:\n");
+            sb.append(android.util.Log.getStackTraceString(throwable));
+            return sb.toString();
+        }
+    }
+}
 
 ```
