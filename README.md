@@ -10,7 +10,7 @@
 
 
 
-use this below code in other apps :
+# use this below code in other apps :
 
 ```java
 
@@ -55,7 +55,18 @@ import android.net.Uri;
  * sends all logs to a centralized LogHub app for monitoring multiple apps
  * in one place. Also captures crashes automatically.
  * 
- * ============================================================================
+ * ==============================================
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ==============================
  * FEATURES
  * ============================================================================
  * ✓ Drop-in replacement for android.util.Log (same API)
