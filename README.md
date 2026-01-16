@@ -10,7 +10,7 @@
 
 
 
-# use this below code in other apps :
+# use this below code file in other apps :
 
 ```java
 
@@ -25,7 +25,7 @@ import android.net.Uri;
 >>>ADD THIS IN MANIFEST
 
 <application
-        android:name=".Log" <- your.package.name.Log
+        android:name=".Log" <- location of this file relative to your package 
         
         
 **/
