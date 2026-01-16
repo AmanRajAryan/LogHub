@@ -1,3 +1,17 @@
+
+<p float="left">
+  <img src="screenshots/card.jpg" width="45%" />
+  <img src="screenshots/text.jpg" width="45%" /> 
+</p>
+
+
+
+
+
+
+
+use this below code in other apps :
+
 ```java
 
 package aman.lhtest; // Change to your package
