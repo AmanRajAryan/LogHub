@@ -1,0 +1,87 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'aman.loghub'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'aman.loghub'
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+       
+        resConfigs "en"
+    }
+
+    signingConfigs {
+        if (project.hasProperty("RELEASE_STORE_FILE")) {
+            release {
+                storeFile file(RELEASE_STORE_FILE)
+                storePassword RELEASE_STORE_PASSWORD
+                keyAlias RELEASE_KEY_ALIAS
+                keyPassword RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            if (signingConfigs.findByName("release") != null) {
+                signingConfig signingConfigs.release
+            }
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation libs.androidx.core
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+
+  
+
+    // LocalBroadcastManager
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+    
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    
+    // ViewPager2
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    
+    // Fragment
+    implementation 'androidx.fragment:fragment:1.6.2'
+    
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.7.0'
+    
+    // CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+    
+    // SwipeRefreshLayout
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+}

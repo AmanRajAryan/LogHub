@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Background Colors -->
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    
+    <!-- Text Colors - IMPROVED CONTRAST -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#E0E0E0</color>
+    <color name="text_hint">#9E9E9E</color>
+    
+    <!-- Card Colors -->
+    <color name="card_background">#2C2C2C</color>
+    <color name="divider">#3C3C3C</color>
+    
+    <!-- Log Level TEXT Colors (for dark backgrounds) -->
+    <color name="log_debug">#90CAF9</color>
+    <color name="log_info">#FFFFFF</color>
+    <color name="log_warn">#FFFFFF</color>
+    <color name="log_error">#FFFFFF</color>
+    <color name="log_crash">#FFFFFF</color>
+    
+    <!-- Log Level Backgrounds (Dark) - BRIGHTER FOR BETTER CONTRAST -->
+    <color name="log_debug_bg">#455A64</color>
+    <color name="log_info_bg">#1976D2</color>
+    <color name="log_warn_bg">#F57C00</color>
+    <color name="log_error_bg">#E53935</color>
+    <color name="log_crash_bg">#C62828</color>
+</resources>
